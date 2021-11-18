@@ -1,0 +1,13 @@
+version: 1.0.0
+name: example-webview
+summary: Example Webview
+description: Example showing how to create webview extensions
+
+manifests:
+  - manifests/example_component.yml
+
+components:
+  example:
+    manifest: example_component.yml
+    sources:
+      - web/index.html

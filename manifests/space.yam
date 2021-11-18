@@ -1,0 +1,5 @@
+# Space(built in)
+version: v1
+kind: Space
+metadata:
+  name: test-space

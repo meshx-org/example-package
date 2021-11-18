@@ -1,0 +1,33 @@
+version: v1
+kind: Collection
+metadata:
+  name: users-collection
+spec:
+  datasource: workspace-source
+  createPolicy: Never
+  
+  names:
+    plural: users
+    singular: user
+    kind: User
+  
+  schema:
+    primaryKey: id
+    missingValues: ['NaN', '-']
+    
+    fields:
+      - name: id
+        title: Id
+        type: string
+        format: uuid
+        description: The id of the record
+        constraints:
+          required: true
+          unique: true
+      - name: assigned
+    
+    linkedFields:
+      - fields: assigned
+        reference:
+          resource: user
+          fields: did

@@ -1,0 +1,30 @@
+version: v1
+kind: Flow
+metadata:
+  name: test-flow1
+spec:
+  # unitLib: 
+  #  - meshx.com/v1
+  steps:
+    node1:
+      nid: node1
+      cid: test
+      input: {}
+      output:
+        out:
+          - nid: node2
+            in: $in
+        out:data:
+          - nid: node2
+            in: in:data
+    node2:
+      nid: node2
+      cid: test
+      input:
+        in:data:
+          - nid: node1
+            out: out:data
+      output:
+        out: []
+#status:
+#  draft: true

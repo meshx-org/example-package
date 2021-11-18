@@ -1,0 +1,13 @@
+version: v1
+kind: RunEvent
+metadata:
+  name: event123
+spec:
+  flow: 123
+---
+version: v1
+kind: ClickEvent
+metadata:
+  name: event123
+spec:
+  flow: 123
